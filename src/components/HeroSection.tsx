@@ -25,7 +25,7 @@ const HeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 blur-[80px] rounded-full animate-pulse-glow scale-150" />
           <img
             src="/logo.png"
-            alt="AIinARABIA Logo"
+            alt="AI in Arabia Logo"
             className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain drop-shadow-2xl"
             loading="eager"
           />
