@@ -39,8 +39,10 @@
     --turquoise: 188 80% 50%;
     --turquoise-light: 188 70% 60%;
 
-    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.03);
+    --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.35), 0 0 60px rgba(34, 195, 230, 0.06);
+    --shadow-glow-primary: 0 0 30px rgba(34, 195, 230, 0.15);
+    --shadow-glow-secondary: 0 0 30px rgba(139, 92, 246, 0.12);
 
     --sidebar-background: 230 22% 10%;
     --sidebar-foreground: 0 0% 95%;
@@ -104,6 +106,11 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 .animate-float-geo {
   animation: float-geo 20s ease-in-out infinite;
 }
@@ -121,26 +128,137 @@
   opacity: 0;
 }
 
-/* Glass card — matches AIinAsia dark card style */
+/* Premium glass card */
 .glass-card {
-  background: hsla(230, 22%, 13%, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid hsla(0, 0%, 100%, 0.07);
-  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    hsla(230, 22%, 14%, 0.65) 0%,
+    hsla(230, 22%, 11%, 0.75) 100%
+  );
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: 16px;
   box-shadow: var(--shadow-card);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsla(188, 80%, 50%, 0.2) 30%,
+    hsla(263, 90%, 66%, 0.15) 70%,
+    transparent 100%
+  );
 }
 
 .glass-card:hover {
   box-shadow: var(--shadow-card-hover);
-  transform: translateY(-2px);
-  border-color: hsla(188, 80%, 50%, 0.15);
+  transform: translateY(-3px);
+  border-color: hsla(188, 80%, 50%, 0.18);
+  background: linear-gradient(
+    135deg,
+    hsla(230, 22%, 16%, 0.7) 0%,
+    hsla(230, 22%, 13%, 0.8) 100%
+  );
 }
 
-/* Gradient text — cyan → purple */
+/* Glass panel (for signup, lighter feel) */
+.glass-panel {
+  background: linear-gradient(
+    180deg,
+    hsla(230, 22%, 14%, 0.5) 0%,
+    hsla(230, 22%, 10%, 0.6) 100%
+  );
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid hsla(0, 0%, 100%, 0.06);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card), inset 0 1px 0 hsla(0, 0%, 100%, 0.04);
+  position: relative;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsla(0, 0%, 100%, 0.1),
+    transparent
+  );
+}
+
+/* Glass input */
+.glass-input {
+  background: hsla(230, 22%, 10%, 0.6) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid hsla(0, 0%, 100%, 0.08) !important;
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  border-color: hsla(188, 80%, 50%, 0.3) !important;
+  box-shadow: 0 0 0 3px hsla(188, 80%, 50%, 0.08), var(--shadow-glow-primary);
+}
+
+/* Glass button */
+.glass-button {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(34, 195, 230, 0.2), inset 0 1px 0 hsla(0, 0%, 100%, 0.15);
+  transition: all 0.3s ease;
+}
+
+.glass-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 25%,
+    hsla(0, 0%, 100%, 0.08) 50%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.glass-button:hover {
+  box-shadow: 0 6px 24px rgba(34, 195, 230, 0.3), inset 0 1px 0 hsla(0, 0%, 100%, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, hsl(188, 80%, 50%), hsl(263, 90%, 66%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Divider glow */
+.glow-divider {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(188, 80%, 50%),
+    hsl(263, 90%, 66%),
+    transparent
+  );
+  opacity: 0.4;
 }
