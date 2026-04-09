@@ -15,12 +15,12 @@ const features: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: GraduationCap,
     title: "Learn & Guides",
-    description: "Practical AI guides, tutorials, and prompt libraries — Arabic and English",
+    description: "Practical AI guides, tutorials, and prompt libraries in Arabic and English",
   },
   {
     icon: Wrench,
     title: "AI Tools",
-    description: "Company directory, readiness scores, glossary, and more — localised for MENA",
+    description: "Company directory, readiness scores, glossary, and more, localised for MENA",
   },
   {
     icon: Palette,

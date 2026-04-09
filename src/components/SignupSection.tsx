@@ -34,7 +34,7 @@ const SignupSection = () => {
         body: JSON.stringify({
           email: email,
           "Beta Access Requested": earlyAccess ? "Yes" : "No",
-          _subject: `AIinARABIA Waitlist${earlyAccess ? " — Beta Access" : ""}`,
+          _subject: `AIinARABIA Waitlist${earlyAccess ? " - Beta Access" : ""}`,
         }),
       });
 
@@ -51,7 +51,7 @@ const SignupSection = () => {
     } catch {
       // Fallback to mailto
       const subject = encodeURIComponent(
-        `AIinARABIA Waitlist${earlyAccess ? " — Beta Access" : ""}`
+        `AIinARABIA Waitlist${earlyAccess ? " - Beta Access" : ""}`
       );
       const body = encodeURIComponent(
         `Email: ${email}\nBeta Access: ${earlyAccess ? "Yes" : "No"}`

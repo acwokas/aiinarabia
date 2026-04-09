@@ -12,7 +12,7 @@ const SocialProofSection = () => {
             >
               AIinAsia.com
             </a>{" "}
-            is the Asia-Pacific's leading independent AI publication — now expanding to the Middle East.
+            is the Asia-Pacific's leading independent AI publication, now expanding to the Middle East.
           </p>
 
           <div className="w-16 h-[2px] mx-auto bg-gradient-to-r from-primary to-secondary mb-6" />
