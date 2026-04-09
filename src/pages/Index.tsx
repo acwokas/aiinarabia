@@ -1,4 +1,3 @@
-import GeometricBackground from "@/components/GeometricBackground";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
