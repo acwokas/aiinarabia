@@ -1,7 +1,17 @@
 const SocialProofSection = () => {
   return (
-    <section className="relative py-20 px-4">
-      <div className="max-w-3xl mx-auto text-center">
+    <section className="relative py-20 px-4 overflow-hidden">
+      {/* Dubai skyline background */}
+      <div
+        className="absolute inset-0 opacity-[0.15] blur-xl"
+        style={{
+          backgroundImage: `url('/dubai-skyline.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+
+      <div className="relative z-10 max-w-3xl mx-auto text-center">
         <div className="glass-card p-8 md:p-12">
           <p className="text-lg md:text-xl font-medium mb-6 leading-relaxed">
             <a
