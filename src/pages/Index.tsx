@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <GeometricBackground />
+      
       <AnnouncementBar />
       <main className="relative z-10 pt-10">
         <HeroSection />
