@@ -1,31 +1,34 @@
-const features = [
+import { Newspaper, BarChart3, GraduationCap, Wrench, Palette, Globe } from "lucide-react";
+import { LucideIcon } from "lucide-react";
+
+const features: { icon: LucideIcon; title: string; description: string }[] = [
   {
-    icon: "📰",
+    icon: Newspaper,
     title: "Daily AI Briefing",
     description: "Your '3 Before 9' morning brief, curated for the MENA region",
   },
   {
-    icon: "📊",
+    icon: BarChart3,
     title: "Business & Policy",
     description: "Enterprise AI adoption, regulation, and investment across the Gulf and beyond",
   },
   {
-    icon: "🎓",
+    icon: GraduationCap,
     title: "Learn & Guides",
     description: "Practical AI guides, tutorials, and prompt libraries — Arabic and English",
   },
   {
-    icon: "🔧",
+    icon: Wrench,
     title: "AI Tools",
     description: "Company directory, readiness scores, glossary, and more — localised for MENA",
   },
   {
-    icon: "🎨",
+    icon: Palette,
     title: "Create",
     description: "AI-powered creative workflows, prompt engineering, and hands-on experiments",
   },
   {
-    icon: "🌍",
+    icon: Globe,
     title: "MENA Focus",
     description: "Coverage spanning UAE, Saudi Arabia, Egypt, Qatar, and the wider region",
   },
@@ -49,7 +52,7 @@ const FeaturesSection = () => {
               className="glass-card p-6 group animate-fade-in-up"
               style={{ animationDelay: `${0.6 + i * 0.1}s` }}
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
+              <feature.icon className="w-8 h-8 mb-4 text-primary" />
               <h3 className="text-lg font-display font-bold mb-2 group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
