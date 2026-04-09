@@ -4,8 +4,11 @@ import FeaturesSection from "@/components/FeaturesSection";
 import SignupSection from "@/components/SignupSection";
 import SocialProofSection from "@/components/SocialProofSection";
 import Footer from "@/components/Footer";
+import useReveal from "@/hooks/useReveal";
 
 const Index = () => {
+  useReveal();
+
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       

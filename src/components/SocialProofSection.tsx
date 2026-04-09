@@ -1,3 +1,9 @@
+const stats = [
+  { value: "10K+", label: "Readers" },
+  { value: "50+", label: "AI Guides" },
+  { value: "12", label: "Countries" },
+];
+
 const SocialProofSection = () => {
   return (
     <section className="relative py-20 px-4 overflow-hidden">
@@ -12,7 +18,7 @@ const SocialProofSection = () => {
       />
 
       <div className="relative z-10 max-w-3xl mx-auto text-center">
-        <div className="glass-card p-8 md:p-12">
+        <div className="glass-card p-8 md:p-12 reveal">
           <p className="text-lg md:text-xl font-medium mb-6 leading-relaxed">
             <a
               href="https://aiinasia.com"
@@ -26,6 +32,20 @@ const SocialProofSection = () => {
           </p>
 
           <div className="w-16 h-[2px] mx-auto bg-gradient-to-r from-primary to-secondary mb-6" />
+
+          {/* Stats row */}
+          <div className="flex justify-center gap-8 md:gap-16 my-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="flex flex-col items-center">
+                <span className="text-2xl md:text-3xl font-extrabold gradient-text">
+                  {stat.value}
+                </span>
+                <span className="text-xs text-muted-foreground mt-1">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
 
           <p className="text-sm text-muted-foreground">
             Part of the{" "}
