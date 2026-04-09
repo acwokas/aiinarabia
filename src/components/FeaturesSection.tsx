@@ -35,7 +35,7 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="relative py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl md:text-4xl font-bold text-center mb-4">
+        <h2 className="text-2xl md:text-4xl font-display font-extrabold text-center mb-4">
           What's <span className="gradient-text">Coming</span>
         </h2>
         <p className="text-muted-foreground text-center mb-16 max-w-xl mx-auto">
@@ -46,11 +46,11 @@ const FeaturesSection = () => {
           {features.map((feature, i) => (
             <div
               key={feature.title}
-              className="glass-card p-6 hover:border-primary/20 transition-all duration-300 group animate-fade-in-up"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className="glass-card p-6 group animate-fade-in-up"
+              style={{ animationDelay: `${0.6 + i * 0.1}s` }}
             >
               <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+              <h3 className="text-lg font-display font-bold mb-2 group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
