@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        display: ['Plus Jakarta Sans', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -49,6 +50,10 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        turquoise: {
+          DEFAULT: "hsl(var(--turquoise))",
+          light: "hsl(var(--turquoise-light))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

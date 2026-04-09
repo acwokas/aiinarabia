@@ -13,9 +13,8 @@ const SignupSection = () => {
     e.preventDefault();
     if (!email.trim()) return;
 
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(email) || email.length > 255) {
       toast({
         title: "Invalid email",
         description: "Please enter a valid email address.",
@@ -26,14 +25,6 @@ const SignupSection = () => {
 
     setLoading(true);
     try {
-      const subject = encodeURIComponent(
-        `AIinARABIA Waitlist Signup${earlyAccess ? " — Beta Access Requested" : ""}`
-      );
-      const body = encodeURIComponent(
-        `New waitlist signup:\n\nEmail: ${email}\nEarly/Beta Access: ${earlyAccess ? "Yes" : "No"}\nTimestamp: ${new Date().toISOString()}`
-      );
-
-      // Use formsubmit.co to send email without backend
       const response = await fetch("https://formsubmit.co/ajax/arabia@aiinasia.com", {
         method: "POST",
         headers: {
@@ -42,8 +33,8 @@ const SignupSection = () => {
         },
         body: JSON.stringify({
           email: email,
-          early_access: earlyAccess ? "Yes" : "No",
-          _subject: `AIinARABIA Waitlist Signup${earlyAccess ? " — Beta Access Requested" : ""}`,
+          "Beta Access Requested": earlyAccess ? "Yes" : "No",
+          _subject: `AIinARABIA Waitlist${earlyAccess ? " — Beta Access" : ""}`,
         }),
       });
 
@@ -55,20 +46,20 @@ const SignupSection = () => {
         setEmail("");
         setEarlyAccess(false);
       } else {
-        throw new Error("Failed to submit");
+        throw new Error("Submit failed");
       }
     } catch {
-      // Fallback: open mailto
+      // Fallback to mailto
       const subject = encodeURIComponent(
-        `AIinARABIA Waitlist Signup${earlyAccess ? " — Beta Access Requested" : ""}`
+        `AIinARABIA Waitlist${earlyAccess ? " — Beta Access" : ""}`
       );
       const body = encodeURIComponent(
-        `New waitlist signup:\n\nEmail: ${email}\nEarly/Beta Access: ${earlyAccess ? "Yes" : "No"}`
+        `Email: ${email}\nBeta Access: ${earlyAccess ? "Yes" : "No"}`
       );
       window.open(`mailto:arabia@aiinasia.com?subject=${subject}&body=${body}`, "_blank");
       toast({
         title: "Almost there!",
-        description: "Your email client should open to complete the signup.",
+        description: "Your email client should open to complete signup.",
       });
     } finally {
       setLoading(false);
@@ -78,7 +69,7 @@ const SignupSection = () => {
   return (
     <section id="signup" className="relative py-24 px-4">
       <div className="max-w-xl mx-auto text-center">
-        <h2 className="text-2xl md:text-4xl font-bold mb-4">
+        <h2 className="text-2xl md:text-4xl font-display font-extrabold mb-4">
           Be the <span className="gradient-text">First to Know</span>
         </h2>
         <p className="text-muted-foreground mb-10">
@@ -94,21 +85,22 @@ const SignupSection = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               maxLength={255}
-              className="flex-1 bg-muted/50 border-border/50 h-12 text-base placeholder:text-muted-foreground/60"
+              className="flex-1 bg-muted/50 border-border h-12 text-base placeholder:text-muted-foreground/50 focus-visible:ring-primary"
             />
             <button
               type="submit"
               disabled={loading}
-              className="h-12 px-8 rounded-lg font-semibold text-sm bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-50 whitespace-nowrap"
+              className="h-12 px-8 rounded-lg font-semibold text-sm bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:opacity-90 transition-all disabled:opacity-50 whitespace-nowrap cursor-pointer"
             >
               {loading ? "Sending..." : "Notify Me"}
             </button>
           </div>
 
-          <label className="flex items-center gap-3 justify-center cursor-pointer">
+          <label className="flex items-center gap-3 justify-center cursor-pointer select-none">
             <Checkbox
               checked={earlyAccess}
               onCheckedChange={(checked) => setEarlyAccess(checked === true)}
+              className="border-muted-foreground/40 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
             />
             <span className="text-sm text-muted-foreground">
               I'd like early access to contribute, test, or write for AIinARABIA
@@ -116,7 +108,7 @@ const SignupSection = () => {
           </label>
         </form>
 
-        <p className="text-xs text-muted-foreground/50 mt-6">
+        <p className="text-xs text-muted-foreground/40 mt-6">
           No spam. Unsubscribe anytime.
         </p>
       </div>
