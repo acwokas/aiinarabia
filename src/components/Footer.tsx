@@ -22,10 +22,10 @@ const Footer = () => {
       <div className="glow-divider w-full mb-12" />
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="AIinARABIA" className="h-8 w-8 object-contain" />
+          <div className="flex items-center gap-4">
+            <img src="/logo.png" alt="AI in Arabia" className="h-12 w-auto object-contain" />
             <p className="text-sm text-muted-foreground">
-              © 2026 AIinARABIA. All rights reserved.
+              © 2026 AI in Arabia. All rights reserved.
             </p>
           </div>
 
