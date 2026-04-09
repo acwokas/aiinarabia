@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
         {/* Introduction */}
         <h2 className="text-xl font-display font-bold text-foreground mb-3 mt-10">Introduction</h2>
         <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-          AI in ARABIA ("we", "us", or "our") operates the website aiinarabia.com. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website or sign up for our waitlist. We are committed to protecting your privacy and handling your data transparently.
+          AI in Arabia ("we", "us", or "our") operates the website aiinarabia.com. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website or sign up for our waitlist. We are committed to protecting your privacy and handling your data transparently.
         </p>
 
         {/* Information We Collect */}
@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
         {/* How We Use Your Information */}
         <h2 className="text-xl font-display font-bold text-foreground mb-3 mt-10">How We Use Your Information</h2>
         <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-          We use your information to: notify you when AI in ARABIA launches, send relevant updates about our platform (only if you opted in), analyse website traffic and usage patterns to improve our site, and understand our audience demographics.
+          We use your information to: notify you when AI in Arabia launches, send relevant updates about our platform (only if you opted in), analyse website traffic and usage patterns to improve our site, and understand our audience demographics.
         </p>
 
         {/* Cookies */}
@@ -104,7 +104,7 @@ const PrivacyPolicy = () => {
 
         {/* Collective */}
         <p className="text-muted-foreground/60 text-xs mt-12 mb-8 text-center">
-          AI in ARABIA is part of the{" "}
+          AI in Arabia is part of the{" "}
           <a href="https://you.withthepowerof.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-accent transition-colors">
             You.WithThePowerOf.AI
           </a>{" "}
@@ -115,7 +115,7 @@ const PrivacyPolicy = () => {
         <div className="text-center mt-8">
           <Link
             to="/"
-            className="inline-flex items-center justify-center h-12 px-8 rounded-xl font-semibold text-sm bg-gradient-to-r from-primary via-secondary to-accent text-primary-foreground hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center h-12 px-8 rounded-xl font-semibold text-sm border border-white/10 bg-white/5 text-foreground/80 hover:bg-white/10 hover:text-foreground transition-all"
           >
             ← Back to home
           </Link>
