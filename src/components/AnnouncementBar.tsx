@@ -15,7 +15,7 @@ const AnnouncementBar = () => {
         background: 'linear-gradient(90deg, hsla(188,80%,50%,0.08) 0%, hsla(263,90%,66%,0.08) 50%, hsla(38,92%,50%,0.05) 100%)',
       }}
     >
-      <span className="font-medium tracking-wide">AIinARABIA launches Q3 2026</span>
+      <span className="font-medium tracking-wide"><span className="font-medium tracking-wide">AI in Arabia launches Q3 2026</span></span>
       <span className="text-muted-foreground mx-1">|</span>
       <span className="text-primary font-semibold">Join the waitlist</span>
       <ChevronDown className="w-3.5 h-3.5 text-primary/60 ml-0.5" />
