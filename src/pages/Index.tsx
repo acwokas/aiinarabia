@@ -1,4 +1,5 @@
 import GeometricBackground from "@/components/GeometricBackground";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import SignupSection from "@/components/SignupSection";
@@ -9,7 +10,8 @@ const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <GeometricBackground />
-      <main className="relative z-10">
+      <AnnouncementBar />
+      <main className="relative z-10 pt-10">
         <HeroSection />
         <FeaturesSection />
         <SignupSection />
