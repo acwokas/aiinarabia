@@ -1,7 +1,8 @@
 const stats = [
-  { value: "10K+", label: "Readers" },
-  { value: "50+", label: "AI Guides" },
-  { value: "12", label: "Countries" },
+  { value: "40K", label: "Readers" },
+  { value: "1,500", label: "Articles Published" },
+  { value: "100+", label: "Guides" },
+  { value: "15", label: "Interactive Tools" },
 ];
 
 const SocialProofSection = () => {
