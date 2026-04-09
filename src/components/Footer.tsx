@@ -25,7 +25,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <img src="/logo.png" alt="AI in Arabia" className="h-12 w-auto object-contain" />
+            <img src="/logo.png" alt="AI in Arabia" className="h-6 w-auto object-contain opacity-70" />
             <p className="text-sm text-muted-foreground">
               © 2026 AI in Arabia. All rights reserved.
             </p>

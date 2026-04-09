@@ -35,7 +35,7 @@ const SocialProofSection = () => {
           <div className="w-16 h-[2px] mx-auto bg-gradient-to-r from-primary to-secondary mb-6" />
 
           {/* Stats row */}
-          <div className="flex justify-center gap-8 md:gap-16 my-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 max-w-md mx-auto my-8">
             {stats.map((stat) => (
               <div key={stat.label} className="flex flex-col items-center">
                 <span className="text-2xl md:text-3xl font-extrabold gradient-text">
