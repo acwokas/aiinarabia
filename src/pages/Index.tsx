@@ -1,4 +1,3 @@
-import GeometricBackground from "@/components/GeometricBackground";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -9,7 +8,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <GeometricBackground />
+      
       <AnnouncementBar />
       <main className="relative z-10 pt-10">
         <HeroSection />
