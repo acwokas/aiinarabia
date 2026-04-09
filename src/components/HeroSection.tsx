@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 text-center">
       {/* Logo glow */}
-      <div className="relative mb-8">
+      <div className="relative mb-4">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 blur-[80px] rounded-full animate-pulse-glow scale-150" />
         <img
           src="/logo.png"
