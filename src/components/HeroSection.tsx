@@ -9,7 +9,7 @@ const HeroSection = () => {
         <img
           src="/logo.png"
           alt="AIinARABIA Logo"
-          className="relative w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-2xl"
+          className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain drop-shadow-2xl"
           loading="eager"
         />
       </div>
