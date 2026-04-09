@@ -21,12 +21,12 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center">
         {/* Logo glow */}
-        <div className="relative mb-4">
+        <div className="relative mb-2">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 blur-[80px] rounded-full animate-pulse-glow scale-150" />
           <img
             src="/logo.png"
             alt="AI in Arabia Logo"
-            className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain drop-shadow-2xl"
+            className="relative w-72 md:w-[28rem] lg:w-[36rem] object-contain drop-shadow-2xl"
             loading="eager"
           />
         </div>
